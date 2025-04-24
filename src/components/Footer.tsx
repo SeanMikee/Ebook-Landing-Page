@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,20 +19,17 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4 text-pink-300">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Home</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Benefits</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Testimonials</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">FAQ</a></li>
+                <li><Link to="/" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Home</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Contact</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-lg font-semibold mb-4 text-pink-300">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Refund Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Contact Us</a></li>
+                <li><Link to="/privacy-policy" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Terms of Service</Link></li>
+                <li><Link to="/refund-policy" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Refund Policy</Link></li>
               </ul>
             </div>
           </div>
