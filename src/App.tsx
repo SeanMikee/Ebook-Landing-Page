@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Benefits from './components/Benefits';
@@ -11,7 +12,7 @@ import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import RefundPolicy from './pages/RefundPolicy';
+import PageTransition from './components/PageTransition';
 
 function HomePage() {
   useEffect(() => {
@@ -36,31 +37,46 @@ function HomePage() {
   }, []);
 
   return (
-    <>
+    <PageTransition>
       <Hero />
       <Benefits />
       <Testimonials />
       <CTASection />
       <FAQ />
       <TrustElements />
-    </>
+    </PageTransition>
   );
 }
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className="font-['Poppins'] text-gray-800">
       <Navigation />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/refund-policy" element={<RefundPolicy />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={
+            <PageTransition>
+              <Contact />
+            </PageTransition>
+          } />
+          <Route path="/privacy-policy" element={
+            <PageTransition>
+              <PrivacyPolicy />
+            </PageTransition>
+          } />
+          <Route path="/terms-of-service" element={
+            <PageTransition>
+              <TermsOfService />
+            </PageTransition>
+          } />
+        </Routes>
+      </AnimatePresence>
       <Footer />
     </div>
   );
 }
 
-export default App
+export default App;
