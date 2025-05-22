@@ -2,6 +2,13 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  const scrollToFeatures = () => {
+    const benefitsSection = document.getElementById('benefits');
+    if (benefitsSection) {
+      benefitsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative bg-gradient-to-br from-pink-500 to-purple-800 min-h-screen flex items-center pt-16">
       <div className="absolute inset-0 overflow-hidden">
@@ -20,7 +27,10 @@ const Hero = () => {
               <button className="bg-white text-pink-600 font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center">
                 Buy Now - $47 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="border-2 border-white text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-white hover:text-pink-600">
+              <button 
+                onClick={scrollToFeatures}
+                className="border-2 border-white text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-white hover:text-pink-600"
+              >
                 Learn More
               </button>
             </div>
