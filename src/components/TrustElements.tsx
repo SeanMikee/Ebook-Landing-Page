@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, CreditCard, RefreshCw, Award } from 'lucide-react';
+import { Shield, CreditCard, MessageCircle, Award } from 'lucide-react';
 
 interface TrustItemProps {
   icon: React.ElementType;
@@ -30,9 +30,9 @@ const TrustElements = () => {
       description: "Pay with credit card, PayPal, or Apple Pay for your convenience."
     },
     {
-      icon: RefreshCw,
-      title: "30-Day Money Back",
-      description: "Not satisfied? Get a full refund within 30 days of purchase."
+      icon: MessageCircle,
+      title: "24/7 Support",
+      description: "We're with you every step of the way. Get instant access to expert support whenever you need it — day or night."
     },
     {
       icon: Award,
