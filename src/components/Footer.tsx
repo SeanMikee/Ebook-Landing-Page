@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Twitter, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { Twitter, Instagram, Facebook, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -33,7 +33,6 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><Link to="/privacy-policy" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Privacy Policy</Link></li>
                 <li><Link to="/terms-of-service" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Terms of Service</Link></li>
-                <li><Link to="/refund-policy" className="text-gray-400 hover:text-pink-300 transition-colors duration-300">Refund Policy</Link></li>
               </ul>
             </div>
           </div>
@@ -55,7 +54,7 @@ const Footer = () => {
               <Facebook className="h-5 w-5" />
             </a>
             <a href="https://wa.me/12893355557" className="text-gray-400 hover:text-pink-400 transition-colors duration-300">
-              <MessageCircle className="h-5 w-5" />
+              <MessageSquare className="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -63,5 +62,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;
